@@ -7,3 +7,6 @@ func Repeat(character string, count int) string {
 	}
 	return repeated
 }
+func Divide(one, two int) int {
+	return one / two
+}
