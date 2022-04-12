@@ -1,9 +1,13 @@
-package iteration
+package iteration_test
 
-import "testing"
+import (
+	"testing"
+
+	"github.com/latugovskaya-anastasiya/lgwt/iteration"
+)
 
 func TestRepeat(t *testing.T) {
-	repeated := Repeat("a", 5)
+	repeated := iteration.Repeat("a", 5)
 	expected := "aaaaa"
 
 	if repeated != expected {
@@ -12,7 +16,7 @@ func TestRepeat(t *testing.T) {
 }
 
 func TestDivided(t *testing.T) {
-	divided := Divide(10, 5)
+	divided := iteration.Divide(10, 5)
 	expected := 2
 
 	if divided != expected {

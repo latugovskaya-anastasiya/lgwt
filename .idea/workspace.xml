@@ -5,10 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3ebbff80-34e0-439a-95b1-b5bd131f7edf" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/pointersErrors/pointers_errors_test.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pointers_errors/pointers_errors.go" beforeDir="false" afterPath="$PROJECT_DIR$/pointersErrors/pointers_errors.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pointers_errors/pointers_errors_test.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/iteration/iterator_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/iteration/iterator_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/struct_methods_interfaces/smi_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/struct_methods_interfaces/smi_test.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

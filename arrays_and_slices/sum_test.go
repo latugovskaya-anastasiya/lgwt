@@ -1,8 +1,10 @@
-package main
+package sum_test
 
 import (
 	"reflect"
 	"testing"
+
+	sum "github.com/latugovskaya-anastasiya/lgwt/arrays_and_slices"
 )
 
 func TestSum(t *testing.T) {
@@ -10,7 +12,7 @@ func TestSum(t *testing.T) {
 	t.Run("collection of any size", func(t *testing.T) {
 		numbers := []int{1, 2, 3}
 
-		got := Sum(numbers)
+		got := sum.Sum(numbers)
 		want := 6
 
 		if got != want {
@@ -27,12 +29,12 @@ func TestSumAllTails(t *testing.T) {
 	}
 
 	t.Run("make the sums of some slices", func(t *testing.T) {
-		got := SumAllTails([]int{1, 2}, []int{0, 9})
+		got := sum.SumAllTails([]int{1, 2}, []int{0, 9})
 		want := []int{2, 9}
 		checkSums(t, got, want)
 	})
 	t.Run("Safely sum empty sleces", func(t *testing.T) {
-		got := SumAllTails([]int{}, []int{3, 4, 5})
+		got := sum.SumAllTails([]int{}, []int{3, 4, 5})
 		want := []int{0, 9}
 		checkSums(t, got, want)
 	})

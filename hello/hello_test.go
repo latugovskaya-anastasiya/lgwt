@@ -1,6 +1,10 @@
-package main
+package hello_test
 
-import "testing"
+import (
+	"testing"
+
+	"github.com/latugovskaya-anastasiya/lgwt/hello"
+)
 
 func TestHello(t *testing.T) {
 
@@ -11,22 +15,22 @@ func TestHello(t *testing.T) {
 		}
 	}
 	t.Run("saying hello to people", func(t *testing.T) {
-		got := Hello("Chris", "")
+		got := hello.Hello("Chris", "")
 		want := "Hello, Chris"
 		assertCorrectMessage(t, got, want)
 	})
 	t.Run("say 'Hello, World' when an empty string is supplied", func(t *testing.T) {
-		got := Hello("", "")
+		got := hello.Hello("", "")
 		want := "Hello, World"
 		assertCorrectMessage(t, got, want)
 	})
 	t.Run("in Spanish", func(t *testing.T) {
-		got := Hello("Elodie", "Spanish")
+		got := hello.Hello("Elodie", "Spanish")
 		want := "Hola, Elodie"
 		assertCorrectMessage(t, got, want)
 	})
 	t.Run("in French", func(t *testing.T) {
-		got := Hello("Anna", "French")
+		got := hello.Hello("Anna", "French")
 		want := "Bonjour, Anna"
 		assertCorrectMessage(t, got, want)
 	})

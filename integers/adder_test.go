@@ -1,12 +1,14 @@
-package integers
+package integers_test
 
 import (
 	"fmt"
 	"testing"
+
+	"github.com/latugovskaya-anastasiya/lgwt/integers"
 )
 
 func TestAdder(t *testing.T) {
-	sum := Add(2, 2)
+	sum := integers.Add(2, 2)
 	expected := 4
 
 	if sum != expected {
@@ -14,7 +16,7 @@ func TestAdder(t *testing.T) {
 	}
 }
 func ExampleAdd() {
-	sum := Add(1, 6)
+	sum := integers.Add(1, 6)
 	fmt.Println(sum)
 	// Output: 7
 }
