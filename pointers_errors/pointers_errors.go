@@ -13,6 +13,10 @@ type Wallet struct {
 	balance Bitcoin
 }
 
+func (w *Wallet) SetBalance(balance Bitcoin) {
+	w.balance = balance
+}
+
 type Bitcoin int
 
 func (b Bitcoin) String() string {
