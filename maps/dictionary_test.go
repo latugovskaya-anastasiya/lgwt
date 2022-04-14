@@ -7,14 +7,25 @@ import (
 )
 
 func TestSearch(t *testing.T) {
-	dict := map[string]string{
-		"test": "this is just a test",
-	}
+	dict := dictionary.Dict{"test": "this is just a test"}
 
-	got := dictionary.Search(dict, "test")
-	want := "this is just a test"
+	t.Run("known word", func(t *testing.T) {
+		got, _ := dict.Search("test")
+		want := "this is just a test"
 
-	assertStrings(t, got, want)
+		assertStrings(t, got, want)
+	})
+
+	t.Run("unknown word", func(t *testing.T) {
+		_, err := dict.Search("unknown")
+		want := "couldn't find the word you are were looking for"
+
+		if err == nil {
+			t.Fatal("expected to get an error.")
+		}
+
+		assertStrings(t, err.Error(), want)
+	})
 }
 
 func assertStrings(t testing.TB, got, want string) {
