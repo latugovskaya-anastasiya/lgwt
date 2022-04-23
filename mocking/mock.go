@@ -12,14 +12,14 @@ type Sleeper interface {
 	Sleep()
 }
 
-// DefaultSleeper is an implementation of Sleeper with a predefined delay.
-type DefaultSleeper struct {
-}
-
-// Sleep will pause execution for the defined Duration.
-func (d *DefaultSleeper) Sleep() {
-	time.Sleep(1 * time.Second)
-}
+// // DefaultSleeper is an implementation of Sleeper with a predefined delay.
+// type DefaultSleeper struct {
+// }
+//
+// // Sleep will pause execution for the defined Duration.
+// func (d *DefaultSleeper) Sleep() {
+// 	time.Sleep(1 * time.Second)
+// }
 
 const finalWord = "Go!"
 const countdownStart = 3
@@ -36,6 +36,6 @@ func Countdown(out io.Writer, sleeper Sleeper) {
 }
 
 func main() {
-	sleeper := &DefaultSleeper{}
+	sleeper := &ConfigurableSleeper{1 * time.Second, time.Sleep}
 	Countdown(os.Stdout, sleeper)
 }
