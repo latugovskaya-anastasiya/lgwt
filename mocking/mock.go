@@ -7,9 +7,6 @@ import (
 	"time"
 )
 
-const finalWord = "Go!"
-const countdownStart = 3
-
 // Sleeper allows you to put delays.
 type Sleeper interface {
 	Sleep()
@@ -23,6 +20,9 @@ type DefaultSleeper struct {
 func (d *DefaultSleeper) Sleep() {
 	time.Sleep(1 * time.Second)
 }
+
+const finalWord = "Go!"
+const countdownStart = 3
 
 // Countdown prints a countdown from 3 to out with a delay between count provided by Sleeper.
 func Countdown(out io.Writer, sleeper Sleeper) {
