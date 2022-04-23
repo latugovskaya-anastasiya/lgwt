@@ -52,7 +52,7 @@ func (d Dictionary) Update(word, definition string) error {
 	_, err := d.Search(word)
 	switch err {
 	case ErrNotFound:
-		return ErrWordExists
+		return ErrWordDoesNotExist
 	case nil:
 		d[word] = definition
 	default:
