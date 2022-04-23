@@ -6,6 +6,9 @@ const (
 
 	// ErrWordExists means you are trying to add a word that is already known
 	ErrWordExists = DictionaryErr("cannot add word because it already exists")
+
+	// ErrWordDoesNotExist occurs when trying to update a word not in the dictionary
+	ErrWordDoesNotExist = DictionaryErr("cannot update word because it does not exist")
 )
 
 // DictionaryErr are errors that can happen when interacting with the dictionary.
@@ -45,6 +48,20 @@ func (d Dictionary) Add(word, definition string) error {
 }
 
 // Update changes the definition of a given word.
-func (d Dictionary) Update(word, definition string) {
-	d[word] = definition
+func (d Dictionary) Update(word, definition string) error {
+	_, err := d.Search(word)
+	switch err {
+	case ErrNotFound:
+		return ErrWordExists
+	case nil:
+		d[word] = definition
+	default:
+		return err
+	}
+	return nil
+}
+
+// Delete removes a word from the dictionary.
+func (d Dictionary) Delete(word string) {
+	delete(d, word)
 }
